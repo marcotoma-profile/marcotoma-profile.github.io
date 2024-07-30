@@ -1,7 +1,7 @@
 {
   "name": "Marco TOMA",
   "title": "Sviluppatore Software | Studente di Informatica",
-  "about": "Sono uno studente di Informatica presso l'Università Statale di Milano con una solida base in programmazione, sicurezza informatica e gestione di sistemi e reti. La mia passione per la tecnologia si combina con un'attitudine al lavoro di squadra e una capacità di apprendimento rapido, rendendomi un candidato ideale per ruoli nel settore IT.",
+  "about": "Sono uno studente di Informatica presso l'Università Statale di Milano (corso di laurea Magistrale) con una solida base in programmazione, sicurezza informatica e gestione di sistemi e reti. La mia passione per la tecnologia si combina con un'attitudine al lavoro di squadra e una capacità di apprendimento rapido, rendendomi un candidato ideale per ruoli nel settore IT.",
   "skills": {
     "programming": ["C/C++ (Avanzato)", "Java (Avanzato)", "JavaScript (Avanzato)", "Python (Avanzato)", "TypeScript (Avanzato)"],
     "systems And Networks": ["Sistemi operativi Unix", "Architetture di rete", "Protocolli di rete", "Tecnologie wireless"],
