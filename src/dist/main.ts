@@ -114,8 +114,14 @@ function populateHTML(data: ResumeData): void {
 
     if (emailEl) emailEl.textContent = data.contact.email;
     if (phoneEl) phoneEl.textContent = data.contact.phone;
-    if (linkedinEl) linkedinEl.href = data.contact.linkedin;
-    if (githubEl) githubEl.href = data.contact.github;
+    if (linkedinEl) {
+        linkedinEl.text = data.contact.linkedin;
+        linkedinEl.href = data.contact.linkedin;
+    }
+    if (githubEl) {
+        githubEl.text = data.contact.github;
+        githubEl.href = data.contact.github;
+    }
 }
 
 window.addEventListener('DOMContentLoaded', async () => {

@@ -78,10 +78,14 @@ function populateHTML(data) {
         emailEl.textContent = data.contact.email;
     if (phoneEl)
         phoneEl.textContent = data.contact.phone;
-    if (linkedinEl)
+    if (linkedinEl) {
+        linkedinEl.text = data.contact.linkedin;
         linkedinEl.href = data.contact.linkedin;
-    if (githubEl)
+    }
+    if (githubEl) {
+        githubEl.text = data.contact.github;
         githubEl.href = data.contact.github;
+    }
 }
 window.addEventListener('DOMContentLoaded', async () => {
     try {
