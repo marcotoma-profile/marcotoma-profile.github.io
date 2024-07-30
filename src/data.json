@@ -1,0 +1,50 @@
+{
+  "name": "Marco TOMA",
+  "title": "Sviluppatore Software | Studente di Informatica",
+  "about": "Sono uno studente di Informatica presso l'Università Statale di Milano con una solida base in programmazione, sicurezza informatica e gestione di sistemi e reti. La mia passione per la tecnologia si combina con un'attitudine al lavoro di squadra e una capacità di apprendimento rapido, rendendomi un candidato ideale per ruoli nel settore IT.",
+  "skills": {
+    "programming": ["C/C++ (Avanzato)", "Java (Avanzato)", "JavaScript (Avanzato)", "Python (Avanzato)", "TypeScript (Avanzato)"],
+    "systemsAndNetworks": ["Sistemi operativi Unix", "Architetture di rete", "Protocolli di rete", "Tecnologie wireless"],
+    "security": ["Tecniche di cifratura", "Autenticazione e firma elettronica", "Prevenzione attacchi informatici", "Configurazione firewall e VPN"],
+    "databases": ["PostgreSQL", "MySQL"]
+  },
+  "projects": [
+    {
+      "title": "Analisi delle Prestazioni di un Theorem Prover per Logiche Condizionali",
+      "date": "Maggio 2024",
+      "description": "Ho sviluppato un'applicazione che genera formule casuali per valutare le prestazioni di un theorem prover per logiche condizionali..."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Cameriere - Barista",
+      "company": "Fortune di Loveno Alfonsina & C. S",
+      "period": "1 Ottobre 2021 – 27 Marzo 2024",
+      "description": "Sviluppato competenze in gestione del tempo, lavoro di squadra e servizio clienti."
+    },
+    {
+      "title": "Assistente Istruttore",
+      "company": "Amatori Basket Savigliano",
+      "period": "1 Luglio 2021 – 30 Luglio 2021",
+      "description": "Gestito e coordinato attività per oltre 100 ragazzi, dimostrando capacità organizzative e di leadership."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Laurea Triennale in Informatica",
+      "institution": "Università di Torino",
+      "year": "Prevista Luglio 2025"
+    },
+    {
+      "degree": "Diploma Liceo Scientifico",
+      "institution": "I.I.S. Arimondi-Eula Savigliano",
+      "year": "Luglio 2019"
+    }
+  ],
+  "contact": {
+    "email": "toma.marco200@gmail.com",
+    "phone": "+39 342 7798082",
+    "linkedin": "inserisci_qui_il_tuo_profilo_linkedin",
+    "github": "inserisci_qui_il_tuo_profilo_github"
+  }
+}
