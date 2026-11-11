@@ -1,67 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-    <!-- ... altri elementi head ... -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="src/dist/main.js" type="module"></script>
-    <link rel="stylesheet" href="src/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Marco Toma, amministratore di sistema in ambiente Microsoft cloud. Laurea magistrale in Cybersecurity all’Università degli Studi di Milano.">
+  <meta name="color-scheme" content="light dark">
+  <title>Marco Toma, amministratore di sistema e cybersecurity</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<header>
-    <img src="src/immagine_curriculum.JPG" alt="Foto di Marco TOMA" class="profile-photo">
-    <h1 id="name"></h1>
-    <p id="title"></p>
-</header>
+  <a class="skip" href="#percorso">Vai al percorso</a>
 
-<nav>
-    <ul>
-        <li><a href="#chi-sono">Chi Sono</a></li>
-        <li><a href="#competenze">Competenze</a></li>
-        <li><a href="#progetti">Progetti</a></li>
-        <li><a href="#esperienza">Esperienza</a></li>
-        <li><a href="#istruzione">Istruzione</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-    </ul>
-</nav>
+  <header class="hero">
+    <img class="photo" src="foto.jpg" alt="Ritratto di Marco Toma" width="317" height="423">
+    <div>
+      <h1>Marco Toma</h1>
+      <p class="lede">Amministratore di sistema in ambiente Microsoft cloud. Laurea magistrale in Cybersecurity all’Università degli Studi di Milano, con 110 e lode.</p>
+      <ul class="contacts">
+        <li><a href="mailto:toma.marco200@gmail.com">toma.marco200@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/TODO" rel="me noopener"><span class="todo">LinkedIn (inserisci URL)</span></a></li>
+        <li><a href="https://github.com/marcotoma-profile" rel="me noopener">GitHub</a></li>
+        <li><a href="cv-marco-toma.pdf" download><span class="todo">CV in PDF (aggiungi il file)</span></a></li>
+      </ul>
+      <p class="where">Milano</p>
+    </div>
+  </header>
 
-<main>
-    <section id="chi-sono">
-        <h2><i class="fas fa-user"></i> Chi Sono</h2>
-        <p id="about"></p>
+  <main>
+    <section class="profile" aria-labelledby="profilo">
+      <h2 id="profilo">Profilo</h2>
+      <p>Gestisco identità, dispositivi e infrastruttura cloud di una software house di circa 80 persone che sviluppa per il settore assicurativo ed è certificata ISO/IEC 27001. Il mio lavoro sta nel punto in cui una configurazione tecnica diventa un controllo di sicurezza verificabile: chi può accedere a cosa, da quale dispositivo, lasciando quale traccia.</p>
+      <p>Ho iniziato part time durante la magistrale e da ottobre 2026 lavoro a tempo pieno. All’università mi sono concentrato su crittografia e protezione dei dati personali, temi su cui ho scritto la tesi.</p>
     </section>
 
-    <section id="competenze">
-        <h2><i class="fas fa-laptop-code"></i> Competenze Tecniche</h2>
-        <div id="skills-container" class="skills-grid"></div>
+    <section aria-labelledby="percorso">
+      <div class="section-head">
+        <h2 id="percorso">Percorso</h2>
+        <button class="tamper" type="button" hidden aria-pressed="false">Prova a modificarlo</button>
+      </div>
+      <p class="chain-note" hidden>Ogni voce è collegata alla precedente con un hash SHA-256 calcolato nel tuo browser. Se modifichi un testo, la catena da quel punto in poi non torna più.</p>
+
+      <ol class="chain">
+        <li class="block" data-kind="Lavoro">
+          <div class="content">
+            <p class="period">Da <span class="todo">mese</span> 2024, part time fino a settembre 2026, full time da ottobre 2026</p>
+            <h3>Amministratore di sistema</h3>
+            <p class="org"><span class="todo">Nome azienda</span>, Milano</p>
+            <ul>
+              <li>Gestione dei dispositivi Windows con Microsoft Intune: registrazione con Windows Autopilot, profili di configurazione, distribuzione delle applicazioni (Win32 e Microsoft Store) e criteri di conformità.</li>
+              <li>Hardening degli endpoint: rimozione dei privilegi di amministratore locale anche sui dispositivi già distribuiti, Windows LAPS, cifratura BitLocker con chiavi di ripristino custodite in Entra ID.</li>
+              <li>Identità e accessi su Microsoft Entra ID: MFA, accesso condizionale, criteri sulle password e ruoli amministrativi assegnati per privilegio minimo.</li>
+              <li>Amministrazione di risorse Azure (macchine virtuali, App Service, database SQL) e controllo degli accessi con RBAC.</li>
+              <li>Supporto al sistema di gestione ISO/IEC 27001: controlli tecnici su logging, gestione delle vulnerabilità e software autorizzato, raccolta delle evidenze per gli audit.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="block" data-kind="Formazione">
+          <div class="content">
+            <p class="period">2024 – luglio 2026</p>
+            <h3>Laurea magistrale in Cybersecurity</h3>
+            <p class="org">Università degli Studi di Milano. Voto 110 e lode</p>
+            <p>Tesi: “Progettazione e implementazione di un’architettura blockchain privacy preserving per la gestione dei dati personali conforme al GDPR”. Relatore <span class="todo">nome</span>.</p>
+            <p><span class="todo">Una o due frasi su come la tua architettura concilia l’immutabilità della blockchain con il diritto alla cancellazione (art. 17 GDPR).</span></p>
+          </div>
+        </li>
+
+        <li class="block" data-kind="Lavoro">
+          <div class="content">
+            <p class="period">Ottobre 2021 – marzo 2024</p>
+            <h3>Cameriere e barista</h3>
+            <p class="org">Fortune di Loveno Alfonsina &amp; C.</p>
+            <p>Lavoro in parallelo agli studi: servizio in sala e al banco, organizzazione dei turni con i colleghi, contatto diretto con i clienti.</p>
+          </div>
+        </li>
+
+        <li class="block" data-kind="Formazione">
+          <div class="content">
+            <p class="period">2019 – luglio 2024</p>
+            <h3>Laurea triennale in Informatica</h3>
+            <p class="org">Università degli Studi di Torino<span class="todo">. Voto</span></p>
+            <p>Progetto: benchmark per i test automatici di un theorem prover per logiche condizionali. L’applicazione genera formule casuali, esegue le prove e misura le prestazioni del prover.</p>
+          </div>
+        </li>
+
+        <li class="block" data-kind="Lavoro">
+          <div class="content">
+            <p class="period">Estati 2018 – 2021</p>
+            <h3>Assistente istruttore al camp estivo</h3>
+            <p class="org">Amatori Basket Savigliano</p>
+            <p>Per quattro anni consecutivi, con altri istruttori, ho seguito circa cento ragazzi al giorno, pasti compresi.</p>
+          </div>
+        </li>
+
+        <li class="block" data-kind="Formazione">
+          <div class="content">
+            <p class="period">Luglio 2019</p>
+            <h3>Diploma di liceo scientifico</h3>
+            <p class="org">I.I.S. Arimondi-Eula, Savigliano</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
-    <section id="progetti">
-        <h2><i class="fas fa-project-diagram"></i> Progetti Personali</h2>
-        <div id="projects-container"></div>
-    </section>
+    <section aria-labelledby="competenze">
+      <h2 id="competenze">Competenze</h2>
+      <dl class="skills">
+        <dt>Microsoft cloud</dt>
+        <dd>Microsoft 365 Business Premium, Entra ID, Intune, Windows Autopilot, Windows LAPS, BitLocker, Defender for Business, Exchange Online, Azure (macchine virtuali, App Service, SQL, RBAC)</dd>
 
-    <section id="esperienza">
-        <h2><i class="fas fa-briefcase"></i> Esperienza Lavorativa</h2>
-        <div id="experience-container"></div>
-    </section>
+        <dt>Sicurezza e conformità</dt>
+        <dd>ISO/IEC 27001:2022, GDPR, crittografia simmetrica e asimmetrica (AES, RSA), funzioni di hash e firma digitale, blockchain, vulnerabilità applicative (XSS, CSRF, SQL injection, buffer overflow), firewall e VPN</dd>
 
-    <section id="istruzione">
-        <h2><i class="fas fa-graduation-cap"></i> Istruzione</h2>
-        <div id="education-container"></div>
-    </section>
+        <dt>Automazione e sviluppo</dt>
+        <dd>PowerShell, Python, Java, C e C++, JavaScript e TypeScript, SQL (PostgreSQL, MySQL)</dd>
 
-    <section id="contatti">
-        <h2><i class="fas fa-envelope"></i> Contatti</h2>
-        <p>Email: <span id="email"></span></p>
-        <p>Telefono: <span id="phone"></span></p>
-        <p>LinkedIn: <a id="linkedin" target="_blank"></a></p>
-        <p>GitHub: <a id="github" target="_blank"></a></p>
-    </section>
-</main>
+        <dt>Sistemi e reti</dt>
+        <dd>Windows, Unix e Linux (processi, memoria, IPC), stack TCP/IP, DNS, HTTP, SMTP, instradamento con OSPF, RIP e BGP, reti wireless</dd>
 
-<footer>
-    <p>© 2024 Marco TOMA. Tutti i diritti riservati.</p>
-</footer>
+        <dt>Lingue</dt>
+        <dd>Italiano madrelingua. Inglese B2, certificazione IELTS (2024)</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p class="verify" aria-live="polite"></p>
+    <p>Pagina statica senza cookie né strumenti di tracciamento. Font e immagini sono ospitati su questo sito.</p>
+  </footer>
 </body>
 </html>
