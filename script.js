@@ -56,24 +56,24 @@
 
       const line = hashLine(block);
       line.textContent = "";
-      line.append("prev ");
-      const p = document.createElement("b");
-      p.textContent = ref.prev.slice(0, SHORT);
-      line.append(p, "   hash ");
-      const h = document.createElement("b");
-      h.textContent = ref.hash.slice(0, SHORT);
-      line.append(h);
-      if (broken) {
-        const n = document.createElement("span");
-        n.className = "now";
-        n.textContent = " " + now.hash.slice(0, SHORT);
-        line.append(n);
-      }
+      const mk = (label, value, cls) => {
+        const span = document.createElement("span");
+        if (cls) span.className = cls;
+        span.append(label + " ");
+        const b = document.createElement("b");
+        b.textContent = value.slice(0, SHORT);
+        span.append(b);
+        return span;
+      };
+      line.append(mk("blocco", String(i + 1).padStart(2, "0")));
+      line.append(mk("prev", ref.prev));
+      line.append(mk("hash", ref.hash, "ref"));
+      if (broken) line.append(mk("ora", now.hash, "now"));
     });
 
     if (firstBroken < 0) {
       status.classList.remove("is-broken");
-      status.textContent = `Percorso verificato: ${blocks.length} voci concatenate con SHA-256, calcolato ora nel tuo browser.`;
+      status.textContent = `Catena integra: ${blocks.length} blocchi verificati con SHA-256 nel tuo browser.`;
     } else {
       const title = normalise(blocks[firstBroken].querySelector("h3") || blocks[firstBroken]);
       status.classList.add("is-broken");
@@ -112,4 +112,21 @@
     button.addEventListener("click", () => setEditing(button.getAttribute("aria-pressed") !== "true"));
     document.querySelector(".chain").addEventListener("input", refresh);
   })();
+})();
+
+// Evidenzia nell'indice la sezione visibile.
+(() => {
+  "use strict";
+  const links = Array.from(document.querySelectorAll(".toc a"));
+  if (!links.length || !("IntersectionObserver" in window)) return;
+  const byId = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      links.forEach((a) => a.classList.remove("is-active"));
+      const a = byId.get(e.target.id);
+      if (a) a.classList.add("is-active");
+    });
+  }, { rootMargin: "-30% 0px -60% 0px" });
+  byId.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
 })();
