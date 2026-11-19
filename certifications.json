@@ -1,5 +1,13 @@
 {
-  "transcript": "",
+  "transcript": "https://learn.microsoft.com/it-it/users/TUO-UTENTE/transcript/CODICE",
   "showPlanned": false,
-  "certifications": []
+  "certifications": [
+    {
+      "name": "Microsoft Certified: Concetti fondamentali di Azure",
+      "code": "AZ-900",
+      "earned": "2026-11-19",
+      "expires": "2027-11-19",
+      "verify": "https://learn.microsoft.com/it-it/users/marcotoma-4896/transcript/d4mr4b1o4n6p184"
+    }
+  ]
 }
