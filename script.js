@@ -130,3 +130,61 @@
   }, { rootMargin: "-30% 0px -60% 0px" });
   byId.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
 })();
+
+// Certificazioni: la sezione compare solo se c'è almeno una certificazione valida (o pianificata e abilitata).
+(async () => {
+  "use strict";
+  if (!window.Certs) return;
+  const section = document.getElementById("certificazioni");
+  const list = section && section.querySelector(".certs");
+  if (!list) return;
+  const { valid, planned, transcript } = await Certs.load();
+  if (!valid.length && !planned.length) return;
+
+  const el = (tag, cls, text) => {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  };
+
+  for (const c of valid) {
+    const li = el("li", c.expired ? "cert is-expired" : "cert");
+    const top = el("div", "cert-top");
+    if (c.code) top.append(el("span", "cert-code", c.code));
+    top.append(el("span", "cert-state", c.expired ? "Scaduta" : "Valida"));
+    li.append(top, el("h3", "cert-name", c.short));
+    const meta = !c.expires
+      ? `Conseguita a ${Certs.formatMonth(c.earned)}`
+      : c.expired
+        ? `Conseguita a ${Certs.formatMonth(c.earned)}, scaduta a ${Certs.formatMonth(c.expires)}`
+        : `Conseguita a ${Certs.formatMonth(c.earned)}, valida fino a ${Certs.formatMonth(c.expires)}`;
+    li.append(el("p", "cert-meta", meta));
+    if (c.verify) {
+      const a = el("a", "cert-verify", "Verifica su Microsoft Learn");
+      a.href = c.verify;
+      a.rel = "noopener";
+      a.target = "_blank";
+      li.append(a);
+    }
+    list.append(li);
+  }
+  for (const c of planned) {
+    const li = el("li", "cert is-planned");
+    const top = el("div", "cert-top");
+    if (c.code) top.append(el("span", "cert-code", c.code));
+    top.append(el("span", "cert-state", "In preparazione"));
+    li.append(top, el("h3", "cert-name", c.short));
+    if (c.target) li.append(el("p", "cert-meta", `Esame previsto: ${Certs.formatMonth(c.target)}`));
+    list.append(li);
+  }
+
+  if (transcript) {
+    const t = section.querySelector(".transcript");
+    t.href = transcript;
+    t.hidden = false;
+  }
+  section.hidden = false;
+  const tocLink = document.querySelector('.toc a[href="#certificazioni"]');
+  if (tocLink) tocLink.hidden = false;
+})();

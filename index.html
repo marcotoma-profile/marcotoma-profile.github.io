@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Marco Toma, amministratore di sistema in ambiente Microsoft cloud. Laurea magistrale in Cybersecurity all’Università degli Studi di Milano.">
   <meta name="color-scheme" content="light dark">
@@ -12,6 +12,7 @@
   <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script src="theme.js"></script>
+  <script src="certs.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -37,12 +38,6 @@
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/TODO" rel="me noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></svg>
-              <span class="todo">LinkedIn (inserisci URL)</span>
-            </a>
-          </li>
-          <li>
             <a href="https://github.com/marcotoma-profile" rel="me noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg>
               GitHub
@@ -57,6 +52,7 @@
 
         <nav class="toc" aria-label="Sezioni">
           <a href="#profilo">Profilo</a>
+          <a href="#certificazioni" hidden>Certificazioni</a>
           <a href="#tesi">Tesi</a>
           <a href="#percorso">Percorso</a>
           <a href="#competenze">Competenze</a>
@@ -74,7 +70,7 @@
       <section class="intro" id="profilo" aria-labelledby="profilo-t">
         <h2 id="profilo-t" class="statement">Identità, dispositivi e cloud Microsoft, gestiti come controlli di sicurezza verificabili.</h2>
         <p>Gestisco identità, dispositivi e infrastruttura cloud di una software house di circa 80 persone che sviluppa per il settore assicurativo ed è certificata ISO/IEC 27001. Il mio lavoro sta nel punto in cui una configurazione tecnica diventa un controllo: chi può accedere a cosa, da quale dispositivo, lasciando quale traccia.</p>
-        <p>Ho iniziato part time durante la magistrale e da ottobre 2026 lavoro a tempo pieno. All’università mi sono concentrato su crittografia e protezione dei dati personali, i temi della mia tesi.</p>
+        <p>Ho iniziato a novembre 2024, part time durante la magistrale, e da ottobre 2026 lavoro a tempo pieno. All’università mi sono concentrato su crittografia e protezione dei dati personali, i temi della mia tesi.</p>
 
         <dl class="facts">
           <div><dt>110 e lode</dt><dd>Magistrale in Cybersecurity, Statale di Milano</dd></div>
@@ -83,16 +79,22 @@
         </dl>
       </section>
 
+      <section id="certificazioni" aria-labelledby="cert-t" hidden>
+        <div class="section-head">
+          <h2 id="cert-t" class="section-title">Certificazioni</h2>
+          <a class="transcript" hidden rel="noopener" target="_blank">Transcript Microsoft Learn</a>
+        </div>
+        <ul class="certs"></ul>
+      </section>
+
       <section id="tesi" aria-labelledby="tesi-t">
         <h2 id="tesi-t" class="section-title">Tesi magistrale</h2>
         <article class="thesis">
           <p class="thesis-meta">Università degli Studi di Milano, luglio 2026</p>
           <h3>Progettazione e implementazione di un’architettura blockchain privacy preserving per la gestione dei dati personali conforme al GDPR</h3>
-          <p><span class="todo">Una o due frasi su come la tua architettura concilia l’immutabilità della blockchain con il diritto alla cancellazione (art. 17 GDPR).</span></p>
           <ul class="chips">
             <li>Blockchain</li><li>Privacy by design</li><li>GDPR</li><li>Crittografia</li>
           </ul>
-          <p class="thesis-foot">Relatore <span>Stelvio Cimato</span></p>
         </article>
       </section>
 
@@ -105,10 +107,10 @@
 
         <ol class="chain">
           <li class="block" data-kind="Lavoro">
-            <div class="block-top"><span class="kind">Lavoro</span><span class="period">Da <span>ottobre</span> 2024 a oggi</span></div>
+            <div class="block-top"><span class="kind">Lavoro</span><span class="period">Novembre 2024 – oggi</span></div>
             <div class="content">
               <h3>Amministratore di sistema</h3>
-              <p class="org"><span>Atumtek</span>, Milano. Part time fino a settembre 2026, full time da ottobre 2026</p>
+              <p class="org">Software house per il settore assicurativo, Milano. Part time da novembre 2024 a settembre 2026, full time da ottobre 2026</p>
               <ul>
                 <li>Gestione dei dispositivi Windows con Microsoft Intune: registrazione con Windows Autopilot, profili di configurazione, distribuzione delle applicazioni (Win32 e Microsoft Store) e criteri di conformità.</li>
                 <li>Hardening degli endpoint: rimozione dei privilegi di amministratore locale anche sui dispositivi già distribuiti, Windows LAPS, cifratura BitLocker con chiavi di ripristino custodite in Entra ID.</li>
@@ -141,7 +143,7 @@
             <div class="block-top"><span class="kind">Formazione</span><span class="period">2019 – luglio 2024</span></div>
             <div class="content">
               <h3>Laurea triennale in Informatica</h3>
-              <p class="org">Università degli Studi di Torino. Voto <span>103</span></p>
+              <p class="org">Università degli Studi di Torino</p>
               <p>Progetto: benchmark per i test automatici di un theorem prover per logiche condizionali. L’applicazione genera formule casuali, esegue le prove e misura le prestazioni del prover.</p>
             </div>
           </li>
@@ -171,7 +173,7 @@
           <div class="skill-group">
             <h3>Microsoft cloud</h3>
             <ul class="chips">
-              <li>Entra ID</li><li>Intune</li><li>Windows Autopilot</li><li>Windows LAPS</li><li>BitLocker</li><li>Defender for Business</li><li>Exchange Online</li><li>Azure VM</li><li>App Service</li><li>Azure SQL</li><li>Azure RBAC</li>
+              <li>Entra ID</li><li>Intune</li><li>Windows Autopilot</li><li>Windows LAPS</li><li>BitLocker</li><li>Defender for Business</li><li>Exchange Online</li><li>Azure VM</li><li>App Service</li><li>Azure SQL</li><li>Azure RBAC</li><li>Static Web Apps</li>
             </ul>
           </div>
           <div class="skill-group">
